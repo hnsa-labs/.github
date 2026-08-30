@@ -1,0 +1,56 @@
+name: Tarefa (HNSA Labs)
+description: Template padrão de tarefa para o roadmap hnsa-labs
+title: "[TAREFA] "
+labels: []
+body:
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      description: Categoria da tarefa
+      options:
+        - "tipo: funcionalidade"
+        - "tipo: infra"
+        - "tipo: segurança"
+        - "tipo: débito técnico"
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade
+      options:
+        - "prioridade: alta"
+        - "prioridade: média"
+        - "prioridade: baixa"
+    validations:
+      required: true
+  - type: textarea
+    id: analise
+    attributes:
+      label: Análise — o que precisa ser feito
+      description: Descreva o requisito e os critérios de aceite/teste
+      placeholder: |
+        O que deve ser feito:
+        ...
+
+        Critérios de aceite / teste:
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: desenvolvido
+    attributes:
+      label: O que foi desenvolvido
+      description: Preencher ANTES de fechar a issue. Deixe em branco na criação.
+      placeholder: "(preencher ao concluir a tarefa)"
+    validations:
+      required: false
+  - type: input
+    id: link_codigo
+    attributes:
+      label: Link do código / commit / PR
+      description: Preencher ANTES de fechar a issue. Deixe em branco na criação.
+      placeholder: "(preencher ao concluir a tarefa) — ex: https://github.com/hnsa-labs/repo/pull/12"
+    validations:
+      required: false
